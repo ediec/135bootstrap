@@ -1,0 +1,129 @@
+/* 
+Theme Name: 13.5 Bootstrap 
+Theme URI:  
+Description: Combination of Twitter Bootstrap with BBC style flowing into 13.5 started from http://blog.teamtreehouse.com/responsive-wordpress-bootstrap-theme-tutorial
+Author: Justin McGuire & Chris Edie 
+Author URI: http://structuredchaosphotography.com 
+Version: 0.5
+Tags: responsive, black, bootstrap 
+
+License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) 
+License URI: http://creativecommons.org/licenses/by-sa/3.0/ 
+
+
+*/
+@import url('bootstrap/css/bootstrap.css');
+@import url('bootstrap/css/bootstrap-responsive.css');
+
+
+/* Layout
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+body{
+	background:#000 url(image/body-png) repeat-x top left;
+	text-align: center;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	font:1em/1.5 "Lucida Sans Unicode","Lucida Grande",Verdana, Arial,Helvetica,"Bitstream Vera Sans",sans-serif;
+	color:#FECD8A;
+}
+
+.header {
+	background:url(images/header-bg.png) no-repeat top center;
+}
+
+h1.logo {
+	border:none;
+	padding:0;
+	margin:0;
+}
+
+h1.logo a {
+	display:block;
+	height:115px;
+	margin:0 auto;
+	text-indent: -99999px;
+}
+
+#footer{
+	color: #888;
+}
+
+.hero-unit{
+	background:#391F10;
+	font-size:1em;
+	padding: 1.5em;
+}
+.hero-unit h1{
+	font-size:1.5em;
+}
+.specials{
+	background:#C23800 url(images/news-block.png) repeat-x 0 0;
+	border:1px solid #F3D18A;
+	padding:1.5em;
+	margin: 0 0 0 0;
+}
+.specials h1{
+	color:black;
+	text-align:center;
+	text-transform:uppercase;
+	border-bottom-color:#391F10;
+}
+.specials h3{
+	color: black;
+	border-bottom-color: #391F10
+}
+.specials a{
+	color:black;
+	text-align: left;
+}
+.featured {
+	border:1px solid #F6C251;
+	margin:15px 0!important;
+}
+
+/* Typography
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+p {
+	margin:20px 0;
+}
+
+a {
+	color:#E59B30;
+}
+
+h1, h2 {
+	font-size:1.5em;
+	color:#FF6600;
+	border-bottom:1px solid #cc9900;
+	padding:0 0 .7em;
+	margin:0 0 .7em;
+}
+
+h3 {
+	font-size:1.25em;
+	color:#FF6600;
+	border-bottom:1px solid #cc9900;
+	padding:0 0 .7em;
+	margin:0 0 .7em;
+}
+
+	h3 a {
+		text-decoration:none;
+	}
+	
+ul, ol {
+	margin:1.2em 0 1.2em 1.2em;
+}
+
+/* Navigation 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.navbar-inverse .brand{
+	color:#e59b30;
+	font-size: 1.1em;
+}
+.navbar-inverse .nav > li > a{
+	color:#e59b30;
+}
+
