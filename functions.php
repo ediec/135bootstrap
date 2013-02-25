@@ -17,7 +17,7 @@
 	
 	function register_my_menus() {
 		register_nav_menus( array(
-			'primary' => __( 'Primary Navigation', 'bbcbootstrap')
+			'primary' => __( 'Primary Navigation', '135bootstrap'),
 		));
 	}
 	
@@ -26,6 +26,36 @@
 	set_post_thumbnail_size( 125, 115, true );
 	add_image_size( 'featured-image', 851, 147, true );
 	
+	//From Astronaut Web wordpress boostrap dropdown menu
+	if (!is_admin()) {
+	    // jQuery (optional loading via Google CDN)
+	    wp_deregister_script('jquery'); 
+	    wp_register_script('jquery', ('http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'), false);   
+	    wp_enqueue_script('jquery');
+	    // Bootstrap JS
+	    wp_register_script('bootstrap', '/wp-content/themes/yourtheme/js/bootstrap-min.js', null, null, false);
+	    wp_enqueue_script('bootstrap');
+	    // Bootstrap CSS
+	    wp_register_style( 'bootstrap', '/wp-content/themes/yourtheme/css/bootstrap.css', null, null, null);
+	    wp_enqueue_style('bootstrap');
+	}
+	
+	function astro_add_dropdown_class($classes, $item) {
+	    global $wpdb;
+	    $has_children = $wpdb->get_var("
+	            SELECT COUNT(meta_id) 
+	            FROM wp_postmeta 
+	            WHERE meta_key='_menu_item_menu_item_parent'
+	            AND meta_value='".$item->ID."'
+	        ");
+	    // add the class dropdown to the current list
+	    if ($has_children > 0) array_push($classes,'dropdown'); 
+	    return $classes;
+	}
+
+	add_filter( 'nav_menu_css_class', 'astro_add_dropdown_class', 10, 2);
+	
+	//End astronaut
 	
 	
 	if ( function_exists('register_sidebar')){ 

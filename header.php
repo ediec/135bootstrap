@@ -31,6 +31,19 @@
 	<!-- turn on javascript -->
 	<?php wp_enqueue_script('jquery'); ?>
 	<?php wp_head(); ?>
+	
+	
+	<!-- testing another dropdown source astronautweb.co/2012/10/wordpress-dropdown-bootstrap -->
+	<script>  
+		$(document).ready(function() {
+			$('.dropdown > a').append('<b class="caret"></b>').dropdown();
+			$('.dropdown .sub-menu').addClass('dropdown-menu');
+			$('.carousel').carousel({
+			interval: 2000
+			});
+		});
+	</script>
+
   </head>
 
 	
@@ -39,6 +52,8 @@
 	<div class="header">
 		<h1 class="logo"><a href="<?php echo get_option('home'); ?>"><?php bloginfo('name'); ?></a></h1>
 	</div>
+	
+
 
     <div class="navbar navbar-inverse navbar-top">
       <div class="navbar-inner">
@@ -51,27 +66,12 @@
 		
 		
           <a class="brand" href="<?php echo site_url(); ?>"><?php bloginfo('name'); ?></a>
-
-			<!-- Soon to be The modal drop down menu >
-			<button href="#findUsModal" role="button" class="btn btn-navbar" data-toggle="modal" data-target="#findUsModal">Find Us &raquo;</button> 
-			<div id="findUsModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="findUsModalLabel" aria-hidden="true">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-					<h3 id='findUsModalLabel'>Find Us!</h3>
-				</div>
-				<div class="modal-body">
-					<p>one fine body</p>
-				</div>
-				<div class="modal-footer">
-					<button class='btn' data-dismiss="modal" aria hidden="true">Close</button>
-				</div>
-			</div>
-			<-->
-
-          <div class="nav-collapse collapse" >
-            <ul class="nav">
-              <?php wp_list_pages(array('title_li' => '', 'exclude'=>8, 'depth'=>1 )); ?>
-            </ul>
+          <?php wp_nav_menu( array(
+			'container' => 'div', 
+			'container_class' => 'nav-collapse collapse',
+			'menu_class' => 'nav',
+			'theme_location' => 'primary'
+			)) ?><!-- .header-nav -->
 			
 			
 			
@@ -79,6 +79,23 @@
         </div>
       </div>
     </div>
+
+	<!-- Soon to be The modal drop down menu >
+	<button href="#findUsModal" role="button" class="btn btn-navbar" data-toggle="modal" data-target="#findUsModal">Find Us &raquo;</button> 
+	<div id="findUsModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="findUsModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+			<h3 id='findUsModalLabel'>Find Us!</h3>
+		</div>
+		<div class="modal-body">
+			<p>one fine body</p>
+		</div>
+		<div class="modal-footer">
+			<button class='btn' data-dismiss="modal" aria hidden="true">Close</button>
+		</div>
+	</div>
+	<-->
+
 
 
     <div class="container">
