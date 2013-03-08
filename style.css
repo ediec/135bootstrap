@@ -132,6 +132,18 @@ ul.nav li.dropdown:hover ul.dropdown-menu{
 	display: block;
 }
 
+.navbar .nav, .navbar .nav > li {
+	float:none;
+	display:inline-block;
+	*display:inline;
+	*zoom:1;
+	vertical-align: top;
+}
+
+.navbar-inner {
+	text-align:center;
+}
+
 /* Carousel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
